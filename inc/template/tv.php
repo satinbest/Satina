@@ -31,6 +31,14 @@
                                     }
                                     ?>
                                     <i class="fas fa-play-circle"></i>
+                                    <?php
+                                       $time = get_post_meta(get_the_ID(),'satina_video_tv_time',true);
+                                       if (!empty($time)){
+                                        ?><span><?php echo $time; ?><i class="fas fa-play"></i></span><?php
+                                       }else{
+                                           echo "<p>مطلبی پیدا نشد</p>";
+                                       }
+                                    ?>
                                 </figure>
                             </a>
                         </div>
@@ -39,8 +47,6 @@
                 endwhile;
             }
             wp_reset_postdata(); ?>
-
-
             <div class="tv-left">
                 <?php
                 $the_query = new WP_Query(array(
@@ -61,6 +67,14 @@
                             }
                             ?>
                             <i class="fas fa-play"></i>
+                            <?php
+                            $time = get_post_meta(get_the_ID(),'satina_video_tv_time',true);
+                            if (!empty($time)){
+                            ?><span><?php echo $time; ?><i class="fas fa-play"></i></span><?php
+                            }else{
+                                echo "<p>مطلبی پیدا نشد</p>";
+                            }
+                            ?>
                             <h2><?php the_title(); ?></h2>
                         </figure>
                     </a>
