@@ -69,8 +69,19 @@
                     </div>
                 </div>
             </section>
+            <div class="comment-box">
+                <div class="related-head">
+                    <h4>نظرات : </h4>
+                </div>
+                <?php
+                if ( comments_open() || get_comments_number() ) :
+                    comments_template();
+                endif;
+                ?>
+            </div>
 
         </div>
+
         <?php get_sidebar(); ?>
     </div>
 </div>
