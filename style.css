@@ -1,3 +1,17 @@
+/*
+	Theme Name: Satina
+	Theme URI: https://gitlab.com/satinbest/satina-wp
+	Description: طراحی و توسعه این قالب توسط حسین محمدپور انجام شده است.
+	Author: Elementor Team
+	Author URI: https://gitlab.com/satinbest/satina-wp
+	Version: 1.0
+	Tested up to: 5.9
+	Requires PHP: 7.2
+	License: GNU General Public License v3 or later.
+	License URI: https://www.gnu.org/licenses/gpl-3.0.html
+	Text Domain: satina
+	Tags: flexible-header, custom-colors, custom-menu, custom-logo, featured-images, rtl-language-support, threaded-comments, translation-ready
+*/
 @import url("./assets/fonts/font.css");
 * {
   border: 0;
