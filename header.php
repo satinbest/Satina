@@ -25,6 +25,7 @@
             <ul>
                 <li><i class="fas fa-search"></i></li>
                 <li><i class="fas fa-shopping-bag"></i></li>
+                <?php  wp_nav_menu( array( 'theme_location' => 'top-menu','container'=>'' ) ); ?>
             </ul>
         </div>
     </div>
@@ -37,28 +38,7 @@
         </div>
         <!-- nav menu -->
         <nav class="main-menu">
-            <ul>
-                <li>
-                    <a href="#">آموزش وردپرس <i class="fas fa-angle-down"></i></a>
-                    <ul>
-                        <li><a href="#">آموزش یک</a></li>
-                        <li><a href="#">آموزش دو</a></li>
-                        <li><a href="#">آموزش سه</a></li>
-                        <li><a href="#">آموزش چهار</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">آموزش ووکامرس</a></li>
-                <li>
-                    <a href="#">آموزش php <i class="fas fa-angle-down"></i></a>
-                    <ul>
-                        <li><a href="#">آموزش یک</a></li>
-                        <li><a href="#">آموزش دو</a></li>
-                        <li><a href="#">آموزش سه</a></li>
-                        <li><a href="#">آموزش چهار</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">خدمات ما</a></li>
-            </ul>
+            <?php  wp_nav_menu( array( 'theme_location' => 'main-menu','container'=>'' ) ); ?>
         </nav>
         <!-- header button -->
         <div class="sign">

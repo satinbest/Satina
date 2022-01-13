@@ -77,7 +77,13 @@ a {
   font-size: 19px;
   padding: 10px 20px;
 }
-
+.topbar-left ul a{
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 0 10px;
+  font-size: 13px;
+  line-height: 40px;
+}
 /****start header *****/
 .header {
   float: right;
