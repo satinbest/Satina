@@ -31,6 +31,9 @@
                     endif;
                     ?>
                 </section>
+                <div class="pageination">
+                    <?php echo paginate_links(); ?>
+                </div>
             </div>
             <?php get_sidebar(); ?>
         </div>
