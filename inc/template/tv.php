@@ -7,7 +7,7 @@
             </div>
 
             <div class="tv-link">
-                <a href="#">ویدئوهای بیشتر</a>
+                <a href="<?php echo get_post_type_archive_link('tv')?>">ویدئوهای بیشتر</a>
             </div>
         </div>
 

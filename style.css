@@ -908,10 +908,13 @@ footer .copy-right {
   padding-right: 10px;
   color: #5caf21;
 }
-.category-post .box-article{
+.category-post .box-article {
   width: 31%;
   float: right;
   margin: 0 0 20px 15px;
+  border: 1px solid #aeaeae;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .category-post .category-head {
   font-size: 18px;
