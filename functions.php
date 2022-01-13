@@ -22,6 +22,10 @@ function satina_setup_theme(){
     add_theme_support('post-thumbnails');
     //set size thumbnail for slider article
     add_image_size('article',313,181,true);
+    //add size for first post tv
+    add_image_size('tv_large',820,548,true);
+    //add sise 4 post tv
+    add_image_size('tv_small',265,165,true);
     //add theme support menu
     register_nav_menus(
         array(

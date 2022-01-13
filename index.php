@@ -10,79 +10,7 @@
 
 <!--start box tv-->
 
-<section class="tv">
-    <div class="container">
-        <div class="tv-head">
-            <div class="tv-title">
-                <h2>محتوای ویدئویی</h2>
-                <h5>آرشیو محتوای ویدئویی</h5>
-            </div>
-
-            <div class="tv-link">
-                <a href="#">ویدئوهای بیشتر</a>
-            </div>
-        </div>
-
-        <div class="box-tv">
-            <div class="tv-right">
-                <div class="first-post">
-                    <a href="#">
-                        <figure>
-                            <img src="<?php echo get_template_directory_uri() . '/img/16.jpg' ?>"/>
-                            <i class="fas fa-play-circle"></i>
-                        </figure>
-                    </a>
-                </div>
-            </div>
-
-            <div class="tv-left">
-                <div class="other-post">
-                    <a href="#">
-                        <figure>
-                            <img src="<?php echo get_template_directory_uri() . '/img/12.png' ?>"/>
-                            <i class="fas fa-play"></i>
-                            <h2>بهترین زبان برنامه نویسی تحت وب برای شروع در ایران</h2>
-                        </figure>
-                    </a>
-                </div>
-
-                <div class="other-post">
-                    <a href="#">
-                        <figure>
-                            <img src="<?php echo get_template_directory_uri() . '/img/13.jpeg' ?>"/>
-                            <i class="fas fa-play"></i>
-                            <h2>بهترین زبان برنامه نویسی تحت وب برای شروع در ایران</h2>
-                        </figure>
-                    </a>
-                </div>
-
-                <div class="other-post">
-                    <a href="#">
-                        <figure>
-                            <img src="<?php echo get_template_directory_uri() . '/img/14.jpeg' ?>"/>
-                            <i class="fas fa-play"></i>
-                            <h2>بهترین زبان برنامه نویسی تحت وب برای شروع در ایران</h2>
-                        </figure>
-                    </a>
-                </div>
-
-                <div class="other-post">
-                    <a href="#">
-                        <figure>
-                            <img src="<?php echo get_template_directory_uri() . '/img/11.jpeg' ?>"/>
-                            <i class="fas fa-play"></i>
-                            <h2>بهترین زبان برنامه نویسی تحت وب برای شروع در ایران</h2>
-                        </figure>
-                    </a>
-                </div>
-
-                <div class="more-tv">
-                    <a href="#">ویدئوهای بیشتر</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<?php include_once 'inc/template/tv.php'?>
 
 <!--start box icons-->
 
@@ -168,7 +96,7 @@
                             if (!empty(has_post_thumbnail())){
                                 the_post_thumbnail('article');
                             }else{
-                                echo get_template_directory_uri().'/img/no-thumbnail.jpg';
+                                ?><img src="<?php echo get_template_directory_uri().'/img/no-thumbnail.jpg'?>" alt="no thumbnail"><?php
                             }
                             ?>
                             <h2><a href="<?php the_permalink(); ?>" target="_blank"><?php the_title(); ?></a></h2>
