@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="<?php language_attributes(); ?>">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/all.css" />
-    <link rel="stylesheet" href="./assets/css/owl.carousel.css" />
-    <link rel="stylesheet" href="./assets/css/owl.theme.default.css" />
-    <link rel="stylesheet" href="style.css" />
+    <?php wp_head(); ?>
     <title>Satina</title>
   </head>
   <body>
@@ -35,7 +32,7 @@
     <header class="header">
       <div class="container">
         <div class="logo">
-          <img src="./img/logo.png" alt="logo website" />
+          <img src="<?php echo get_template_directory_uri().'/img/logo.png'?>" alt="logo website" />
         </div>
         <!-- nav menu -->
         <nav class="main-menu">
@@ -71,9 +68,9 @@
     <!-- start slider -->
     <section class="box-slider">
       <div class="owl-carousel owl-theme" id="main_slider">
-        <div class="item"><img src="./img/03.png" alt="slide 1" /></div>
-        <div class="item"><img src="./img/03.png" alt="slide 2" /></div>
-        <div class="item"><img src="./img/03.png" alt="slide 3" /></div>
+        <div class="item"><img src="<?php echo get_template_directory_uri().'/img/03.png' ?>" alt="slide 1" /></div>
+        <div class="item"><img src="<?php echo get_template_directory_uri().'/img/03.png' ?>" alt="slide 1" /></div>
+        <div class="item"><img src="<?php echo get_template_directory_uri().'/img/03.png' ?>" alt="slide 1" /></div>
       </div>
     </section>
     <section class="tv">
@@ -94,7 +91,7 @@
             <div class="first-post">
               <a href="#">
                 <figure>
-                  <img src="./img/16.jpg" />
+                  <img src="<?php echo get_template_directory_uri().'/img/16.jpg'?>" />
                   <i class="fas fa-play-circle"></i>
                 </figure>
               </a>
@@ -105,7 +102,7 @@
             <div class="other-post">
               <a href="#">
                 <figure>
-                  <img src="./img/12.png" />
+                  <img src="<?php echo get_template_directory_uri().'/img/12.png'?>" />
                   <i class="fas fa-play"></i>
                   <h2>بهترین زبان برنامه نویسی تحت وب برای شروع در ایران</h2>
                 </figure>
@@ -115,7 +112,7 @@
             <div class="other-post">
               <a href="#">
                 <figure>
-                  <img src="./img/13.jpeg" />
+                  <img src="<?php echo get_template_directory_uri().'/img/13.jpeg'?>" />
                   <i class="fas fa-play"></i>
                   <h2>بهترین زبان برنامه نویسی تحت وب برای شروع در ایران</h2>
                 </figure>
@@ -125,7 +122,7 @@
             <div class="other-post">
               <a href="#">
                 <figure>
-                  <img src="./img/14.jpeg" />
+                  <img src="<?php echo get_template_directory_uri().'/img/14.jpeg'?>" />
                   <i class="fas fa-play"></i>
                   <h2>بهترین زبان برنامه نویسی تحت وب برای شروع در ایران</h2>
                 </figure>
@@ -135,7 +132,7 @@
             <div class="other-post">
               <a href="#">
                 <figure>
-                  <img src="./img/11.jpeg" />
+                  <img src="<?php echo get_template_directory_uri().'/img/11.jpeg' ?>" />
                   <i class="fas fa-play"></i>
                   <h2>بهترین زبان برنامه نویسی تحت وب برای شروع در ایران</h2>
                 </figure>
@@ -471,10 +468,6 @@
       </div>
   </footer>
 
-
-
-    <script src="./assets/js/jquery.min.js"></script>
-    <script src="./assets/js/owl.carousel.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <?php wp_footer(); ?>
   </body>
 </html>
