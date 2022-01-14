@@ -49,6 +49,7 @@
                 <div class="article-slider">
                     <div class="owl-carousel owl-theme" id="relate_slider">
                         <?php
+                        global $post;
                         $related = get_posts( array(
                             'category__in' => wp_get_post_categories($post->ID),
                             'numberposts' => 5,

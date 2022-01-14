@@ -20,6 +20,8 @@ function satina_setup_theme(){
     add_theme_support('automatic-feed-links');
     //support thumbnails in theme
     add_theme_support('post-thumbnails');
+    //support theme from woocommerce
+    add_theme_support('woocommerce');
     //set size thumbnail for slider article
     add_image_size('article',313,181,true);
     //add size for first post tv
