@@ -26,9 +26,15 @@
                         ?>
                     </figure>
                 </div>
-                <article class="woocommerce">
-                    <?php woocommerce_content(); ?>
+                <article class="product-single woocommerce">
+                    <div class="content-single">
+                        <?php woocommerce_content(); ?>
+                    </div>
                 </article>
+                <div class="related-product woocommerce">
+                    <?php echo do_shortcode('[related_products per_page = 3 columns = 3]'); ?>
+                </div>
+
             </div>
         </div>
     </div>

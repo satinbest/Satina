@@ -50,6 +50,8 @@ require_once 'inc/tv-posttype.php';
 require_once 'inc/video-tv.php';
 require_once 'inc/video-product.php';
 
+//remove relate post in page products
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 //show old widget panel
 add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
 add_filter( 'use_widgets_block_editor', '__return_false' );
