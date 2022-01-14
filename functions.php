@@ -41,21 +41,10 @@ function custom_excerpt_length(){
 }
 add_filter('excerpt_length','custom_excerpt_length',999);
 
-/**
- * Add a sidebar.
- */
-function satina_widget() {
-    register_sidebar( array(
-        'name'          => __( 'ناحیه کناری بلاگ' ),
-        'id'            => 'satina_blog',
-        'description'   => __( 'ویجت های این ناحیه در تمام پست ها و صفحات نمایش داده می شوند.' ),
-        'before_widget' => '<div class="single-widget">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h4>',
-        'after_title'   => '</h4>',
-    ) );
-}
-add_action( 'widgets_init', 'satina_widget' );
-
+require_once 'inc/widgets.php';
 require_once 'inc/tv-posttype.php';
 require_once 'inc/video-tv.php';
+
+//show old widget panel
+add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
+add_filter( 'use_widgets_block_editor', '__return_false' );

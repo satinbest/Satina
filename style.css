@@ -21,7 +21,7 @@
     box-sizing: border-box;
 }
 
-/* used in page.html */
+/* used in page.php */
 .full-width {
     width: 100% !important;
 }
@@ -561,11 +561,12 @@ a {
     width: 100%;
     margin-top: 25px;
 }
-
 .box-article {
     margin-bottom: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    overflow: hidden;
 }
-
 .box-article img {
     width: 100%;
     max-width: 100%;
