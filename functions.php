@@ -45,13 +45,56 @@ function custom_excerpt_length(){
 }
 add_filter('excerpt_length','custom_excerpt_length',999);
 
+//remove relate post in page products
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+
+//Add a custom product data tab
+add_filter( 'woocommerce_product_tabs', 'woocommerce_product_teacher' );
+function woocommerce_product_teacher( $tabs ) {
+
+    $tabs['course_teacher'] = array(
+        'title' 	=> __( 'مدرس', 'woocommerce' ),
+        'priority' 	=> 10,
+        'callback' 	=> 'woocommerce_product_teacher_content'
+    );
+
+    return $tabs;
+
+}
+function woocommerce_product_teacher_content() {
+    $teacher_name = get_post_meta(get_the_ID(),'satina_course_teacher_name',true);
+    if (!empty($teacher_name)){
+        ?>
+        <div class="course-teacher">
+            <?php
+            $teacher_pic = get_post_meta(get_the_ID(), 'satina_course_teacher_pic', true);
+            if (!empty($teacher_pic)){
+                ?>
+                <div class="teacher-pic">
+                    <img src="<?php echo $teacher_pic; ?>" alt="Teacher Pic">
+                </div>
+                <?php
+            }
+            ?>
+            <div class="teacher-about">
+                <h5><?php echo $teacher_name; ?></h5>
+                <?php $teacher_about = get_post_meta(get_the_ID(),'satina_course_teacher_about',true);
+                if (!empty($teacher_about)){
+                    echo $teacher_about;
+                }
+                ?>
+            </div>
+        </div>
+    <?php
+    }
+}
+
 require_once 'inc/widgets.php';
 require_once 'inc/tv-posttype.php';
 require_once 'inc/video-tv.php';
 require_once 'inc/video-product.php';
-
-//remove relate post in page products
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+require_once 'inc/teacher-product.php';
 //show old widget panel
 add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
 add_filter( 'use_widgets_block_editor', '__return_false' );

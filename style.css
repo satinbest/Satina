@@ -1440,3 +1440,21 @@ footer .copy-right {
 .related-product ul li a.button{
     display: none;
 }
+.course-teacher{
+    display: flex;
+}
+.course-teacher .teacher-pic{
+
+}
+.course-teacher .teacher-pic img {
+    border-radius: 50%;
+    max-width: 210px;
+}
+.course-teacher .teacher-about{
+    padding: 25px;
+    font-size: 16px;
+}
+.course-teacher .teacher-about h5{
+    font-size: 20px;
+    padding: 5px 0;
+}
