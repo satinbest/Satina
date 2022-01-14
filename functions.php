@@ -26,6 +26,8 @@ function satina_setup_theme(){
     add_image_size('tv_large',820,548,true);
     //add sise 4 post tv
     add_image_size('tv_small',265,165,true);
+    //image slider for product
+    add_image_size('product',400,190,true);
     //add theme support menu
     register_nav_menus(
         array(
