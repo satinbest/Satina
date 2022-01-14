@@ -1314,9 +1314,20 @@ footer .copy-right {
     padding: 4px 15px;
     border-radius: 5px;
 }
-
 .comments-inner .comment .reply a:hover {
     background: #5caf21;
     color: #FFFFFF;
     border-radius: 5px;
+}
+/*start style wp smart widget*/
+.wmt-smart-tabs ul.wmt-col-3 li.selected {
+    border-top: 3px solid #5caf21;
+}
+.wmt-smart-tabs .wmt-tabs-content .wmt-widget-title{
+    margin-top: 10px !important;
+    white-space: normal !important;
+}
+.wmt-pagination a.next-visible:hover, .wmt-pagination a.previous-visible:hover {
+    color: #ffffff !important;
+    background: #5caf21;
 }
