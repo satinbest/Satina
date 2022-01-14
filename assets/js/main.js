@@ -83,3 +83,8 @@ $('#relate_slider').owlCarousel({
         }
     }
 })
+$(document).ready(function (){
+    $('.search-icon').click(function (){
+        $('.searchbox').slideToggle();
+    })
+});

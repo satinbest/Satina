@@ -23,7 +23,7 @@
         </div>
         <div class="topbar-left">
             <ul>
-                <li><i class="fas fa-search"></i></li>
+                <li class="search-icon"><i class="fas fa-search"></i></li>
                 <li><i class="fas fa-shopping-bag"></i></li>
                 <?php  wp_nav_menu( array( 'theme_location' => 'top-menu','container'=>'' ) ); ?>
             </ul>
@@ -32,7 +32,7 @@
 </div>
 <!-- start header -->
 <header class="header">
-    <div class="container">
+    <div class="container relative">
         <div class="logo">
             <img src="<?php echo get_template_directory_uri().'/img/logo.png'?>" alt="logo website" />
         </div>
@@ -43,6 +43,12 @@
         <!-- header button -->
         <div class="sign">
             <a href="#"><i class="fas fa-user-lock"></i>ورود / ثبت نام</a>
+        </div>
+        <div class="searchbox">
+            <form action="<?php home_url(); ?>" method="get">
+                <input type="text" name="s" id="" placeholder="جستجو کنید..." value="<?php the_search_query(); ?>">
+                <button class="fas fa-search"></button>
+            </form>
         </div>
     </div>
 </header>
