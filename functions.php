@@ -48,6 +48,7 @@ add_filter('excerpt_length','custom_excerpt_length',999);
 require_once 'inc/widgets.php';
 require_once 'inc/tv-posttype.php';
 require_once 'inc/video-tv.php';
+require_once 'inc/video-product.php';
 
 //show old widget panel
 add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );

@@ -1355,3 +1355,23 @@ footer .copy-right {
 .search-icon {
     cursor: pointer;
 }
+/*start style woocommerce*/
+.main-pro{
+    width: 73%;
+}
+.product-title{
+    width: 100%;
+    float:right;
+    margin: 20px;
+}
+.product-title header h1{
+    background: #FFFFFF;
+    padding: 17px;
+    box-shadow: 0 0 12px #ddd;
+    color: #5caf21;
+    text-align: center;
+    border-radius: 10px;
+}
+.product-thumbnail{
+    margin-bottom: 20px;
+}
