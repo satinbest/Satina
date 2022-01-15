@@ -1160,7 +1160,6 @@ footer .copy-right {
     -webkit-transition: all .2s;
     transition: all .2s;
     font-family: 'Vazir-Regular-FD-WOL';
-
 }
 
 .comment-respond input[type='text'] {
@@ -1701,6 +1700,7 @@ footer .copy-right {
     width: 100%;
     text-align: center;
 }
+/*start style message woocommerce*/
 .woocommerce-message {
     border: 1px solid #5caf21;
     margin: 15px 0 -9px 0;
@@ -1717,4 +1717,62 @@ footer .copy-right {
     background: #5caf21;
     padding: 2px 8px;
     border-radius: 10px;
+}
+.woocommerce input[type="text"],.woocommerce input[type="tel"],.woocommerce input[type="email"],.woocommerce input[type="password"]{
+    width: 100%;
+    outline: 0;
+    padding: 11px 10px;
+    border: 1px solid #dcdcdc;
+    -webkit-box-shadow: 0 0 7px #e9efe9 inset;
+    box-shadow: 0 0 7px #e9efe9 inset;
+    border-radius: 2px;
+    -webkit-appearance: none;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    font-family: 'Vazir-Regular-FD-WOL';
+    font-size: 17px;
+}
+.woocommerce input[type="number"]{
+    border:1px solid #c9c3c3;
+    padding:5px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-family: 'Vazir-Regular-FD-WOL';
+}
+.woocommerce textarea {
+    height: 184px;
+    line-height: 26px;
+    width: 100%;
+    outline: 0;
+    padding: 11px 10px;
+    border: 1px solid #dcdcdc;
+    -webkit-box-shadow: 0 0 7px #e9efe9 inset;
+    box-shadow: 0 0 7px #e9efe9 inset;
+    border-radius: 2px;
+    -webkit-appearance: none;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    font-family: 'Vazir-Regular-FD-WOL';
+}
+.woocommerce .coupon input[type="text"]{
+    width: 59% !important;
+    font-size: 15px;
+}
+.woocommerce a.button.alt{
+    background: #5caf21 !important;
+    border-radius: 5px;
+}
+.woocommerce button{
+    font-family: "Vazir-Regular-FD-WOL";
+    background: #5caf21 !important;
+    border-radius: 8px;
+    color: #FFFFFF !important;
+}
+.my-checkout{
+    width: 70% !important;
+    margin: auto !important;
+}
+.woocommerce a{
+    text-decoration: none !important;
+    color: #1e85be !important;
 }
