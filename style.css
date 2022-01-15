@@ -1761,6 +1761,7 @@ footer .copy-right {
 .woocommerce a.button.alt{
     background: #5caf21 !important;
     border-radius: 5px;
+    color: #FFFFFF !important;
 }
 .woocommerce button{
     font-family: "Vazir-Regular-FD-WOL";
@@ -1775,4 +1776,33 @@ footer .copy-right {
 .woocommerce a{
     text-decoration: none !important;
     color: #1e85be !important;
+}
+.satina-nav-account{
+    float: right;
+    width: 20%;
+    background: #34495e;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+.satina-nav-account ul li{
+    list-style: none;
+}
+.satina-nav-account ul li a{
+    color: #cadaea !important;
+    padding: 10px !important;
+    display: block;
+    border-bottom:1px solid #42596e;
+}
+.satina-nav-account ul li:last-child a{
+    border-bottom:none;
+}
+.satina-nav-account ul li a:hover{
+    background:#102c46 ;
+    border-radius: 10px;
+}
+.satina-content-account{
+    float: right;
+    width: 75%;
+    padding: 20px;
 }
