@@ -30,24 +30,29 @@
                         ?>
                     <h2><a href="<?php the_permalink(); ?>" target="_blank"><?php the_title(); ?></a></h2>
                     <div class="desc">
-                        <div class="rate">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                        <div class="woocommerce rate">
+                            <?php woocommerce_template_loop_rating(); ?>
                         </div>
                         <div class="teacher">
-                            <span>حسین محمدپور</span>
+                            <span>
+                                <?php
+                                $teacher_name = get_post_meta(get_the_ID(),'satina_course_teacher_name',true);
+                                if(!empty($teacher_name)){
+                                    echo $teacher_name;
+                                }else{
+                                    echo "مدرس ندارد";
+                                }
+                                ?>
+                            </span>
                             <i class="fa fa-chalkboard-teacher"></i>
                         </div>
                     </div>
                     <div class="detail">
                         <div class="price">
-                            <del>145000</del>
-                            <ins>110000</ins>
+                            <?php global $product; echo $product->get_price_html(); ?>
                         </div>
                         <div class="users">
-                            <i class="fa fa-users"></i> 35
+                            <i class="fa fa-users"></i> <?php echo get_post_meta($product->id , 'total_sales' , true); ?>
                         </div>
                     </div>
                 </div>

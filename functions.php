@@ -58,6 +58,16 @@ require_once 'inc/video-product.php';
 require_once 'inc/teacher-product.php';
 require_once 'inc/lesson.php';
 
+//add رایگان
+function satina_price_zero( $price, $product ){
+
+    if ( '0' === $product->get_price()  ) {
+        $price = '!رایگان';
+    }
+    return $price;
+}
+add_filter( 'woocommerce_get_price_html', 'satina_price_zero', 100, 2 );
+
 //show old widget panel
 add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
 add_filter( 'use_widgets_block_editor', '__return_false' );
