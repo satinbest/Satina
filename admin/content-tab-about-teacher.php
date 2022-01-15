@@ -5,10 +5,10 @@ function woocommerce_product_teacher( $tabs ) {
 
     $tabs['course_teacher'] = array(
         'title' 	=> __( 'مدرس', 'woocommerce' ),
-        'priority' 	=> 10,
+        'priority' 	=> 20,
         'callback' 	=> 'woocommerce_product_teacher_content'
     );
-
+    unset($tabs['additional_information']);
     return $tabs;
 
 }

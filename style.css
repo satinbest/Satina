@@ -1376,6 +1376,10 @@ footer .copy-right {
 .product-thumbnail{
     margin-bottom: 20px;
 }
+.product-thumbnail figure img{
+    margin: auto;
+    display: block;
+}
 .product-single {
     float: right;
     width: 100%;
@@ -1659,4 +1663,58 @@ footer .copy-right {
 .feature-product span p{
     display: inline;
     font-weight: bold;
+}
+.std-box-view{
+    font-size: 20px;
+    text-align: center;
+    color: #777777;
+}
+.std-box-view .product-view{
+    padding-left:15px;
+    margin-left: 15px;
+    border-left:1px solid #dddddd;
+}
+.std-box-view i{
+    font-size: 20px;
+}
+.catname-pro{
+    color: #777777;
+}
+.catname-pro a{
+    text-decoration: none;
+    color: #777777;
+}
+.catname-pro a:hover{
+    color: #5caf21;
+}
+.shortlink-pro{
+    padding-top: 5px;
+    margin-top: 7px;
+}
+.shortlink-pro input[type="text"]{
+    color: #a7a7a7;
+    padding:7px 10px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    border:1px solid #dcdcdc;
+    box-shadow: 0 0 7px #e9efe9 inset;
+    width: 100%;
+    text-align: center;
+}
+.woocommerce-message {
+    border: 1px solid #5caf21;
+    margin: 15px 0 -9px 0;
+    background: #fff;
+    border-radius: 15px;
+}
+.woocommerce-message::before {
+    color: #5caf21 !important;
+}
+.woocommerce-error .button, .woocommerce-info .button, .woocommerce-message .button {
+    float: left;
+    text-decoration: none;
+    color: #fff;
+    background: #5caf21;
+    padding: 2px 8px;
+    border-radius: 10px;
 }
