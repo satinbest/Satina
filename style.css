@@ -1500,6 +1500,9 @@ footer .copy-right {
 .lesson-course ul li ul .meta-course .dl-course{
     float: left;
 }
+.lesson-course ul li ul .meta-course .denied a{
+    background: #ee205e !important;
+}
 .lesson-course ul li ul .meta-course .dl-course a{
     color: #FFFFFF;
     text-decoration: none;
