@@ -1806,3 +1806,20 @@ footer .copy-right {
     width: 75%;
     padding: 20px;
 }
+.parent-product{
+    display: flex;
+    flex-wrap: wrap;
+}
+.archive-box{
+    width: 32%;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    direction: ltr;
+}
+.woocommerce form.woocommerce-ordering select{
+    border: 1px solid #ddd;
+    padding: 5px;
+    font-family: 'Vazir-Regular-FD-WOL';
+    font-size: 17px;
+    margin-bottom: 15px;
+}
