@@ -1521,3 +1521,64 @@ footer .copy-right {
 .lesson-course ul li ul li i{
     color: #828282;
 }
+/*start sidebar shop*/
+.side-pro{
+    width: 25%;
+}
+.pro-price{
+    display: flex;
+    justify-content: space-around;
+    background: #f7f8f9;
+    padding-left: 5px 15px;
+    height: 70px;
+    border-radius: 10px;
+}
+.pro-price span.price-name{
+    font-size: 18px;
+    padding-top: 15px;
+    color: #666666;
+    font-weight: bold;
+}
+.pro-price p.price{
+    text-align: center;
+}
+.pro-price p.price > span{
+    font-size: 18px;
+    margin-top: 14px;
+    display: block;
+    font-weight: bold;
+}
+.pro-price p.price > del{
+    display: block;
+    color: #e74c3c;
+}
+.pro-price p.price > ins{
+    display: block;
+    font-size: 17px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.price-bytton{
+    background: #5caf21;
+    text-align: center;
+    margin-top: 15px;
+    border-radius: 10px;
+    transition: all .2s ease-in-out;
+}
+.price-bytton:hover{
+    box-shadow:0 0 7px #5caf21 ;
+}
+.price-bytton a{
+    color: #FFFFFF;
+    position: relative;
+    display: block;
+    padding:10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.price-bytton a i{
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}

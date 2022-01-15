@@ -36,6 +36,34 @@
                 </div>
 
             </div>
+            <div class="sidebar side-pro">
+                <div class="single-widget">
+                    <div class="pro-price">
+                        <span class="price-name">قیمت:</span>
+                        <p class="<?php global $product; echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?>"><?php echo $product->get_price_html(); ?></p>
+                    </div>
+                    <?php
+                        $id = $product->id;
+                        if (is_user_logged_in()){
+                            $current_user = wp_get_current_user();
+                        }
+                        if (wc_customer_bought_product( $current_user->user_email, $current_user->ID, $id )){?>
+                            <div class="price-bytton">
+                        <a>
+                           <i class="fas fa-book-reader"></i>
+                            دانشجوی این دوره هستید!
+                        </a>
+                    </div>
+                         <?php  }else{ ?>
+                            <div class="price-bytton">
+                                <a href="<?php echo do_shortcode("[add_to_cart_url id=$id]"); ?>">
+                                    <i class="fas fa-credit-card"></i>
+                                    ثبتـــ نام در این دوره
+                                </a>
+                            </div>
+                    <?php    } ?>
+                </div>
+            </div>
         </div>
     </div>
 <?php get_footer(); ?>
