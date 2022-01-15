@@ -1582,3 +1582,13 @@ footer .copy-right {
     right: 10px;
     top: 15px;
 }
+.product-rate{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.woocommerce .star-rating{
+    color: #f9a134;
+    font-size: 18px;
+    margin-top: 5px;
+}

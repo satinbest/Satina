@@ -62,6 +62,14 @@
                                 </a>
                             </div>
                     <?php    } ?>
+                    <div class="product-rate">
+                        <div class="show-rate">
+                            <?php woocommerce_template_loop_rating(); ?>
+                        </div>
+                        <div class="woocommerce show-rate">
+                            <?php woocommerce_template_loop_rating(); ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
