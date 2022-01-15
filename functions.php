@@ -49,7 +49,7 @@ add_filter('excerpt_length','custom_excerpt_length',999);
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
 
-//Add a custom product data tab
+//Add tab teacher
 add_filter( 'woocommerce_product_tabs', 'woocommerce_product_teacher' );
 function woocommerce_product_teacher( $tabs ) {
 
@@ -90,11 +90,111 @@ function woocommerce_product_teacher_content() {
     }
 }
 
+//add tab course list
+add_filter( 'woocommerce_product_tabs', 'woocommerce_product_course_list' );
+function woocommerce_product_course_list( $tabs ) {
+
+    $tabs['lesson_list'] = array(
+        'title' 	=> __( 'فهرست جلسات', 'woocommerce' ),
+        'priority' 	=> 20,
+        'callback' 	=> 'woocommerce_product_lesson_list_content'
+    );
+
+    return $tabs;
+}
+function woocommerce_product_lesson_list_content(){
+?>
+    <div class="lesson-course">
+        <ul>
+
+            <li>
+                <h4>فصل اول - آموزش مقدماتی وردپرس
+                <i class="fas fa-angle-down"></i>
+                </h4>
+                <ul>
+                    <div class="meta-course">
+                        <div class="time-course">
+                            <i class="fas fa-clock"></i>
+                            <span>مدت زمان فصل :</span>
+                            <span>2 ساعت و 40 دقیقه</span>
+                        </div>
+                        <div class="dl-course">
+                            <a href="#" target="_blank">
+                                <i class="fas fa-download"></i>
+                                لینک دانلود فصل
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        جلسه اول - آموزش اچ تی ام اس
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        جلسه اول - آموزش اچ تی ام اس
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        جلسه اول - آموزش اچ تی ام اس
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        جلسه اول - آموزش اچ تی ام اس
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <h4>فصل دوم - آموزش پیشرفته وردپرس
+                <i class="fas fa-angle-down"></i>
+                </h4>
+                <ul>
+                    <div class="meta-course">
+                        <div class="time-course">
+                            <i class="fas fa-clock"></i>
+                            <span>مدت زمان فصل :</span>
+                            <span>3 ساعت و 40 دقیقه</span>
+                        </div>
+                        <div class="dl-course">
+                            <a href="#" target="_blank">
+                                <i class="fas fa-download"></i>
+                                لینک دانلود فصل
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        جلسه اول - آموزش اچ تی ام اس
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        جلسه اول - آموزش اچ تی ام اس
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        جلسه اول - آموزش اچ تی ام اس
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        جلسه اول - آموزش اچ تی ام اس
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+<?php
+}
+
 require_once 'inc/widgets.php';
 require_once 'inc/tv-posttype.php';
 require_once 'inc/video-tv.php';
 require_once 'inc/video-product.php';
 require_once 'inc/teacher-product.php';
+require_once 'inc/lesson.php';
+
 //show old widget panel
 add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
 add_filter( 'use_widgets_block_editor', '__return_false' );

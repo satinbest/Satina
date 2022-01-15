@@ -1458,3 +1458,66 @@ footer .copy-right {
     font-size: 20px;
     padding: 5px 0;
 }
+/*start style tab list course*/
+.lesson-course {
+    float: right;
+    width: 100%;
+    background: #f2faf6;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+.lesson-course ul li{
+    list-style: none;
+}
+.lesson-course ul li h4 {
+    padding: 20px;
+    cursor: pointer;
+    border: 1px solid #dfe2e6;
+    border-radius: 5px;
+    margin-bottom: 3px;
+}
+.lesson-course ul li h4 i {
+    float: left;
+    font-size: 25px;
+    color: #666;
+}
+.lesson-course ul li ul{
+    margin: 0 30px 20px;
+    display: none;
+}
+.lesson-course ul li ul .meta-course {
+    float: right;
+    background: #3498db;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    border-radius: 10px;
+}
+.lesson-course ul li ul .meta-course .time-course{
+    float: right;
+}
+.lesson-course ul li ul .meta-course .dl-course{
+    float: left;
+}
+.lesson-course ul li ul .meta-course .dl-course a{
+    color: #FFFFFF;
+    text-decoration: none;
+    background: #2ecc71;
+    padding: 6px 10px;
+    border-radius: 40px;
+}
+.lesson-course ul li ul .meta-course .dl-course a i{
+    padding-left: 5px;
+}
+.lesson-course ul li ul li {
+    padding: 15px;
+    background: #ffffff;
+    border-top: 1px solid #f5f7ff;
+    font-size: 16px;
+    border-radius: 10px;
+    margin: 5px 0px;
+}
+.lesson-course ul li ul li i{
+    color: #828282;
+}

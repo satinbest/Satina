@@ -88,3 +88,8 @@ $(document).ready(function (){
         $('.searchbox').slideToggle();
     })
 });
+$(document).ready(function (){
+    $('.lesson-course > ul > li').click(function (){
+        $(this).find('ul').slideToggle();
+    })
+});
