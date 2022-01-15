@@ -46,6 +46,7 @@
                         $id = $product->id;
                         if (is_user_logged_in()){
                             $current_user = wp_get_current_user();
+                            $downloads = wc_get_customer_available_downloads($current_user->ID);
                         }
                         if (wc_customer_bought_product( $current_user->user_email, $current_user->ID, $id )){?>
                             <div class="price-bytton">
@@ -70,7 +71,27 @@
                             <?php woocommerce_template_loop_rating(); ?>
                         </div>
                     </div>
-
+                </div>
+                <?php if (wc_customer_bought_product( $current_user->user_email, $current_user->ID, $id )){?>
+                <div class="single-widget">
+                    <div class="access-title" id="access_title">
+                        <h4>دانلود فایل های دوره</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="list-access-dl">
+                        <?php
+                        foreach ( $downloads as $download ) : ?>
+                        <?php    echo '<a href="' . esc_url( $download['download_url'] ) . '" class="woocommerce-MyAccount-downloads-file button alt"> <i class="fas fa-download"></i> ' . esc_html( $download['download_name'] ) . '</a>'; ?>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                <?php } ?>
+                <div class="single-widget">
+                    <div class="total-buyer">
+                        <i class="fas fa-user-graduate"></i> تعداد دانشجو:
+                        <span><?php echo get_post_meta($id , 'total_sales' , true); ?></span>
+                    </div>
+                    <?php do_action("woocommerce_product_additional_information",$product); ?>
                 </div>
             </div>
         </div>

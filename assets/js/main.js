@@ -89,6 +89,11 @@ $(document).ready(function (){
     })
 });
 $(document).ready(function (){
+    $('#access_title').click(function (){
+        $('.list-access-dl').slideToggle();
+    })
+});
+$(document).ready(function (){
     $('.lesson-course > ul > li').click(function (){
         $(this).find('ul').slideToggle();
     })

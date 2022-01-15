@@ -1532,7 +1532,7 @@ footer .copy-right {
     display: flex;
     justify-content: space-around;
     background: #f7f8f9;
-    padding-left: 5px 15px;
+    padding: 5px 15px;
     height: 70px;
     border-radius: 10px;
 }
@@ -1594,4 +1594,69 @@ footer .copy-right {
     color: #f9a134;
     font-size: 18px;
     margin-top: 5px;
+}
+.access-title{
+    position: relative;
+    cursor: pointer;
+}
+.access-title i{
+    position: absolute;
+    top: 8px;
+    left: 0;
+}
+/*start style box download in page product*/
+.list-access-dl{
+    display: none;
+}
+.list-access-dl a{
+    text-decoration: none;
+    color: #FFFFFF;
+    display: block;
+    background:#5caf21 ;
+    margin: 10px 0;
+    padding: 3px 10px;
+    text-align: center;
+    border-radius: 4px;
+}
+.list-access-dl a:hover{
+    box-shadow: 0 0 5px rgb(73, 137, 32);
+}
+.list-access-dl a i{
+    font-size: 12px;
+}
+/*start byer and product details*/
+.total-buyer{
+    padding: 20px;
+    border: 2px dashed #ddd;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 18px;
+    color: #777777;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+.total-buyer i{
+    font-size: 25px;
+    padding-left:5px;
+}
+.total-buyer span{
+    background:#ecf0f1;
+    padding: 3px 10px 0;
+    font-size: 16px;
+    border-radius: 10px;
+}
+.feature-product{
+    padding: 10px;
+    color: #777;
+    border-bottom:1px solid #efefef;
+}
+.feature-product:last-child{
+    border-bottom:none;
+}
+.feature-product i{
+    margin-left: 5px;
+}
+.feature-product span p{
+    display: inline;
+    font-weight: bold;
 }
