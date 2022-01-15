@@ -109,7 +109,14 @@ do_action( 'woocommerce_after_main_content' );
  * @hooked woocommerce_get_sidebar - 10
  */
         ?> </div> <?php
-do_action( 'woocommerce_sidebar' );?>
+//do_action( 'woocommerce_sidebar' );
+?>
+        <div class="sidebar side-shop">
+            <?php
+            if ( is_active_sidebar( 'satina_product' ) ) { ?>
+                <?php dynamic_sidebar('satina_product'); ?>
+            <?php } ?>
+        </div>
     </div>
 </div>
 <?php get_footer( 'shop' ); ?>

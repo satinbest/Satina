@@ -13,6 +13,15 @@ function satina_widget() {
         'after_title'   => '</h4>',
     ) );
     register_sidebar( array(
+        'name'          => __( 'ناحیه کناری آرشیو محصولات' ),
+        'id'            => 'satina_product',
+        'description'   => __( 'ویجت های این ناحیه در تمام پست ها و صفحات نمایش داده می شوند.' ),
+        'before_widget' => '<div class="single-widget">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4>',
+    ) );
+    register_sidebar( array(
         'name'          => __( 'فوتر یک' ),
         'id'            => 'satina_footer_one',
         'description'   => __( 'ویجت های این ناحیه در تمام پست ها و صفحات نمایش داده می شوند.' ),
