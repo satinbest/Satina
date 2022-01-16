@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <?php wp_head(); ?>
-    <?php $general = satina_get_option('satina_general_options'); ?>
+    <?php
+    $general = satina_get_option('satina_general_options');
+    ?>
     <link rel="icon" type="image/png" href="<?php echo $general[0]['satina_five_icon_option']; ?>">
     <style>
         <?php
@@ -158,26 +160,47 @@
 </head>
 <body>
 <!-- top menu -->
-<div class="top-menu">
+<?php
+$topmenu = satina_get_option('satina_topmenu_options');
+$topmenu_active = $topmenu[0]['satina_topmenu_active_option'];
+$topmenu_background = $topmenu[0]['satina_color_topmenu_option'];
+$topmenu_tell = $topmenu[0]['satina_tel_topmenu_option'];
+$topmenu_email = $topmenu[0]['satina_email_topmenu_option'];
+$topmenu_search = $topmenu[0]['satina_search_topmenu_option'];
+$topmenu_cart = $topmenu[0]['satina_cart_topmenu_option'];
+
+if ($topmenu_active == 'enable'){
+?>
+<div style="background: <?php echo $topmenu_background; ?>" class="top-menu">
     <div class="container">
         <div class="topbar-right">
             <ul>
                 <li>
-                    <i class="fas fa-phone"></i>پشتیبانی و مشاوره در واتس اپ :
-                    09386045643
+                    <i class="fas fa-phone"></i><?php echo $topmenu_tell ?>
                 </li>
-                <li><i class="fas fa-envelope"></i>ایمیل : info@phpgeek.ir</li>
+                <li><i class="fas fa-envelope"></i><?php echo $topmenu_email ?></li>
             </ul>
         </div>
         <div class="topbar-left">
             <ul>
+                <?php
+                if ($topmenu_search == 'enable') {
+                ?>
                 <li class="search-icon"><i class="fas fa-search"></i></li>
-                <li><i class="fas fa-shopping-bag"></i></li>
+                <?php } ?>
+                <?php
+                if ($topmenu_cart == 'enable') {
+                ?>
+                <li><a href="<?php echo home_url()."/cart"?>"><i class="fas fa-shopping-bag"></i></a></li>
+                <?php } ?>
                 <?php  wp_nav_menu( array( 'theme_location' => 'top-menu','container'=>'' ) ); ?>
             </ul>
         </div>
     </div>
 </div>
+<?php
+}
+?>
 <!-- start header -->
 <header class="header">
     <div class="container relative">

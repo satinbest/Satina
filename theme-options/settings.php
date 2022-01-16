@@ -141,7 +141,6 @@ function satina_register_theme_options_metabox() {
             'data-conditional-value'  => 'enable',
         )
     ) );
-
 }
 
 
