@@ -5,10 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <?php wp_head(); ?>
-    <?php $general = satina_get_option('satina_general_options'); ?>
+    <?php
+    $general = satina_get_option('satina_general_options');
+    $topmenu = satina_get_option('satina_topmenu_options');
+    $group_header = satina_get_option('satina_header_options');
+    $typography = satina_get_option('satina_typography_options');
+    ?>
     <link rel="icon" type="image/png" href="<?php echo $general[0]['satina_five_icon_option']; ?>">
     <style>
         <?php
+//        start typography
+        $font_body = $typography[0]['satina_font_body_option'];
+        $font_size = $typography[0]['satina_size_font_option'];
+        $text_align = $typography[0]['satina_text_align_option'];
+        $text_color = $typography[0]['satina_color_body_option'];
+        ?>body{font-family:"<?php echo $font_body; ?>"; }  <?php
+
+        ?>body{text-align:<?php echo $text_align." !important"; ?>; }  <?php
+
+        ?>body{color:<?php echo $text_color." !important"; ?>; }  <?php
+
+        if (isset($font_size)){ ?>
+            body {font-size: <?php echo $font_size."px !important"; ?>;}  <?php
+        }
+//        end typography
         $container = $general[0]['satina_width_container_option'];
         $maincolor = $general[0]['satina_color_main_option'];
         if (isset($container)){
@@ -158,54 +178,139 @@
 </head>
 <body>
 <!-- top menu -->
-<div class="top-menu">
+<?php
+
+$topmenu_active = $topmenu[0]['satina_topmenu_active_option'];
+$topmenu_background = $topmenu[0]['satina_color_topmenu_option'];
+$topmenu_tell = $topmenu[0]['satina_tel_topmenu_option'];
+$topmenu_email = $topmenu[0]['satina_email_topmenu_option'];
+$topmenu_search = $topmenu[0]['satina_search_topmenu_option'];
+$topmenu_cart = $topmenu[0]['satina_cart_topmenu_option'];
+
+if ($topmenu_active == 'enable'){
+?>
+<div style="background: <?php echo $topmenu_background; ?>" class="top-menu">
     <div class="container">
         <div class="topbar-right">
             <ul>
                 <li>
-                    <i class="fas fa-phone"></i>پشتیبانی و مشاوره در واتس اپ :
-                    09386045643
+                    <i class="fas fa-phone"></i><?php echo $topmenu_tell ?>
                 </li>
-                <li><i class="fas fa-envelope"></i>ایمیل : info@phpgeek.ir</li>
+                <li><i class="fas fa-envelope"></i><?php echo $topmenu_email ?></li>
             </ul>
         </div>
         <div class="topbar-left">
             <ul>
+                <?php
+                if ($topmenu_search == 'enable') {
+                ?>
                 <li class="search-icon"><i class="fas fa-search"></i></li>
-                <li><i class="fas fa-shopping-bag"></i></li>
+                <?php } ?>
+                <?php
+                if ($topmenu_cart == 'enable') {
+                ?>
+                <li><a href="<?php echo home_url()."/cart"?>"><i class="fas fa-shopping-bag"></i></a></li>
+                <?php } ?>
                 <?php  wp_nav_menu( array( 'theme_location' => 'top-menu','container'=>'' ) ); ?>
             </ul>
         </div>
     </div>
 </div>
-<!-- start header -->
-<header class="header">
-    <div class="container relative">
-        <div class="logo">
+<?php
+}
+?>
+<?php
+
+$select_header = $group_header[0]['satina_header_select_option'];
+$header_button = $group_header[0]['satina_header_button_option'];
+$btn_text = $group_header[0]['satina_text_button_header_option'] ;
+$btn_link = $group_header[0]['satina_link_button_header_option'];
+?>
+<?php
+if($select_header == 'header_one'){ ?>
+    <!-- start header 1 -->
+    <header class="header">
+        <div class="container relative">
+            <div class="logo">
+                <?php
+                $logo = $general[0]['satina_logo_option'];
+                if (isset($logo)){ ?>
+                    <a href="<?php echo home_url(); ?>"><img src="<?php echo $logo?>" alt="logo website" /></a>
+                    <?php
+                }else{ ?>
+                    <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri().'/img/logo.png'?>" alt="logo website" /></a>
+                    <?php
+                }
+                ?>
+            </div>
+            <!-- nav menu -->
+            <nav class="main-menu">
+                <?php  wp_nav_menu( array( 'theme_location' => 'main-menu','container'=>'' ) ); ?>
+            </nav>
+            <!-- header button -->
             <?php
-            $logo = $general[0]['satina_logo_option'];
-            if (isset($logo)){ ?>
-                <a href="<?php echo home_url(); ?>"><img src="<?php echo $logo?>" alt="logo website" /></a>
-            <?php
-            }else{ ?>
-                <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri().'/img/logo.png'?>" alt="logo website" /></a>
-            <?php
-            }
+                if ($header_button == 'enable'){
             ?>
+            <div class="sign">
+                <a href="#"><i class="fas fa-user-lock"></i>ورود / ثبت نام</a>
+            </div>
+            <?php } ?>
+            <div class="searchbox">
+                <form action="<?php home_url(); ?>" method="get">
+                    <input type="text" name="s" id="" placeholder="جستجو کنید..." value="<?php the_search_query(); ?>">
+                    <button class="fas fa-search"></button>
+                </form>
+            </div>
         </div>
+    </header>
+<?php } else { ?>
+    <!--start header 2-->
+    <header class="header">
+        <div class="container relative">
+            <div class="logo">
+                <?php
+                $logo = $general[0]['satina_logo_option'];
+                if (isset($logo)){ ?>
+                    <a href="<?php echo home_url(); ?>"><img src="<?php echo $logo?>" alt="logo website" /></a>
+                    <?php
+                }else{ ?>
+                    <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri().'/img/logo.png'?>" alt="logo website" /></a>
+                    <?php
+                }
+                ?>
+            </div>
+
+            <!-- header button -->
+
+            <div class="searchbox">
+                <form action="<?php home_url(); ?>" method="get">
+                    <input type="text" name="s" id="" placeholder="جستجو کنید..." value="<?php the_search_query(); ?>">
+                    <button class="fas fa-search"></button>
+                </form>
+            </div>
+            <div class="searchbox2">
+                <form action="<?php home_url(); ?>" method="get">
+                    <input type="text" name="s" id="" placeholder="جستجو کنید..." value="<?php the_search_query(); ?>">
+                    <button class="fas fa-search"></button>
+                </form>
+            </div>
+        </div>
+    </header>
+    <div class="menu-wrapper">
         <!-- nav menu -->
-        <nav class="main-menu">
+        <nav class="container main-menu2">
             <?php  wp_nav_menu( array( 'theme_location' => 'main-menu','container'=>'' ) ); ?>
+            <?php
+            if ($header_button == 'enable'){
+            ?>
+            <div class="sign nopadding-btn">
+                <a href="<?php echo $btn_link; ?>"><i class="fas fa-user-lock"></i><?php echo $btn_text; ?></a>
+            </div>
+            <?php } ?>
         </nav>
-        <!-- header button -->
-        <div class="sign">
-            <a href="#"><i class="fas fa-user-lock"></i>ورود / ثبت نام</a>
-        </div>
-        <div class="searchbox">
-            <form action="<?php home_url(); ?>" method="get">
-                <input type="text" name="s" id="" placeholder="جستجو کنید..." value="<?php the_search_query(); ?>">
-                <button class="fas fa-search"></button>
-            </form>
-        </div>
+
     </div>
-</header>
+<?php
+    }
+?>
+
