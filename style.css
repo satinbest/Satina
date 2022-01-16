@@ -27,7 +27,7 @@
 }
 
 body {
-    font-family: "Vazir-Regular-FD-WOL", sans-serif;
+    font-family: 'Vazir', sans-serif;
     direction: rtl;
     font-size: 14px;
     text-align: right;
@@ -1107,7 +1107,7 @@ footer .copy-right {
     -webkit-appearance: none;
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
-    font-family: "Vazir-Regular-FD-WOL";
+    font-family: 'Vazir';
 }
 .single-widget .wp-block-search .wp-block-search__button{
     background-color: #5caf21;
@@ -1118,7 +1118,7 @@ footer .copy-right {
     /* -webkit-transition: all .2s ease-in-out; */
     transition: all .2s ease-in-out;
     color: #fff;
-    font-family: 'Vazir-Regular-FD-WOL';
+    font-family: 'Vazir';
     font-size: 15px;
     cursor: pointer;
 }
@@ -1223,7 +1223,7 @@ footer .copy-right {
     -webkit-appearance: none;
     -webkit-transition: all .2s;
     transition: all .2s;
-    font-family: 'Vazir-Regular-FD-WOL';
+    font-family: 'Vazir';
 }
 
 .comment-respond input[type='text'] {
@@ -1237,7 +1237,7 @@ footer .copy-right {
     -webkit-appearance: none;
     -webkit-transition: all .2s;
     transition: all .2s;
-    font-family: 'Vazir-Regular-FD-WOL';
+    font-family: 'Vazir';
 }
 
 .comment-respond label {
@@ -1281,7 +1281,7 @@ footer .copy-right {
     /* -webkit-transition: all .2s ease-in-out; */
     transition: all .2s ease-in-out;
     color: #fff;
-    font-family: 'Vazir-Regular-FD-WOL';
+    font-family: 'Vazir';
     font-size: 15px;
     cursor: pointer;
 }
@@ -1402,7 +1402,7 @@ footer .copy-right {
     height: 81px;
     font-size: 22px;
     padding-right: 25px;
-    font-family: 'Vazir-Regular-FD-WOL';
+    font-family:'Vazir';
 }
 .searchbox button {
     position: absolute;
@@ -1431,7 +1431,7 @@ footer .copy-right {
 .searchbox2 input[type="text"] {
     width: 100%;
     font-size: 16px;
-    font-family: 'iransans';
+    font-family: 'Vazir';
     padding: 8px 15px;
     background: #f8f8f8;
     border: 1px solid #f4f4f4;
@@ -1825,7 +1825,7 @@ footer .copy-right {
     -webkit-appearance: none;
     -webkit-transition: all .2s;
     transition: all .2s;
-    font-family: 'Vazir-Regular-FD-WOL';
+    font-family: 'Vazir';
     font-size: 17px;
 }
 .woocommerce input[type="number"]{
@@ -1833,7 +1833,7 @@ footer .copy-right {
     padding:5px;
     font-size: 15px;
     border-radius: 5px;
-    font-family: 'Vazir-Regular-FD-WOL';
+    font-family: 'Vazir';
 }
 .woocommerce textarea {
     height: 184px;
@@ -1848,7 +1848,7 @@ footer .copy-right {
     -webkit-appearance: none;
     -webkit-transition: all .2s;
     transition: all .2s;
-    font-family: 'Vazir-Regular-FD-WOL';
+    font-family: 'Vazir';
 }
 .woocommerce .coupon input[type="text"]{
     width: 59% !important;
@@ -1860,7 +1860,7 @@ footer .copy-right {
     color: #FFFFFF !important;
 }
 .woocommerce button{
-    font-family: "Vazir-Regular-FD-WOL";
+    font-family: 'Vazir';
     background: #5caf21 !important;
     border-radius: 8px;
     color: #FFFFFF !important;
@@ -1915,7 +1915,7 @@ footer .copy-right {
 .woocommerce form.woocommerce-ordering select{
     border: 1px solid #ddd;
     padding: 5px;
-    font-family: 'Vazir-Regular-FD-WOL';
+    font-family: 'Vazir';
     font-size: 17px;
     margin-bottom: 15px;
 }

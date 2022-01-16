@@ -193,6 +193,62 @@ function satina_register_theme_options_metabox() {
             'data-conditional-value'  => 'enable',
         )
     ) );
+    //start typographi
+    $typography = $all_options->add_field( array(
+        'id'          => 'satina_typography_options',
+        'type'        => 'group',
+        'repeatable'  => false, // use false if you want non-repeatable group
+        'options'     => array(
+            'group_title'       => __( 'تنظیمات تایپوگرافی', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+            'sortable'          => true,
+            'closed'         => true, // true to have the groups closed by default
+        ),
+    ) );
+    $all_options->add_group_field($typography, array(
+        'name' => 'نونت بدنه سایت',
+        'id'   => 'satina_font_body_option',
+        'type'             => 'select',
+        'show_option_none' => false,
+        'default'          => 'header_one',
+        'options'          => array(
+            'Vazir' => __( 'وزیر', 'cmb2' ),
+            'shabnam'   => __( 'شبنم', 'cmb2' ),
+        ),
+    ) );
+    $all_options->add_group_field( $typography, array(
+        'name' => 'اندازه متن',
+        'id'   => 'satina_size_font_option',
+        'type' => 'text',
+        'description' => 'پیشفرض بر روی عدد 14 تعریف شده است. ',
+        'attributes' => array(
+            'placeholder' => 'مثلا: 15',
+        )
+    ) );
+    $all_options->add_group_field($typography, array(
+        'name' => 'تراز متن',
+        'id'   => 'satina_text_align_option',
+        'type'             => 'select',
+        'description' => 'پیشفرض بر روی راست تعریف شده است.',
+        'show_option_none' => false,
+        'default'          => 'header_one',
+        'options'          => array(
+            'right' => __( 'متن از راست', 'cmb2' ),
+            'left'   => __( 'متن از چپ', 'cmb2' ),
+            'center'   => __( 'متن از وسط', 'cmb2' ),
+            'justify'   => __( 'متن justify', 'cmb2' ),
+        ),
+    ) );
+    $all_options->add_group_field($typography, array(
+        'name' => 'رنگ متن بدنه',
+        'id'   => 'satina_color_body_option',
+        'type'    => 'colorpicker',
+        'default' => '#303030',
+        'attributes' => array(
+            'data-colorpicker' => json_encode(array(
+                'palettes' => array('#303030','#ff834c','#4fa2c0','#0bc991')
+            )),
+        )
+    ) );
 }
 
 

@@ -7,10 +7,28 @@
     <?php wp_head(); ?>
     <?php
     $general = satina_get_option('satina_general_options');
+    $topmenu = satina_get_option('satina_topmenu_options');
+    $group_header = satina_get_option('satina_header_options');
+    $typography = satina_get_option('satina_typography_options');
     ?>
     <link rel="icon" type="image/png" href="<?php echo $general[0]['satina_five_icon_option']; ?>">
     <style>
         <?php
+//        start typography
+        $font_body = $typography[0]['satina_font_body_option'];
+        $font_size = $typography[0]['satina_size_font_option'];
+        $text_align = $typography[0]['satina_text_align_option'];
+        $text_color = $typography[0]['satina_color_body_option'];
+        ?>body{font-family:"<?php echo $font_body; ?>"; }  <?php
+
+        ?>body{text-align:<?php echo $text_align." !important"; ?>; }  <?php
+
+        ?>body{color:<?php echo $text_color." !important"; ?>; }  <?php
+
+        if (isset($font_size)){ ?>
+            body {font-size: <?php echo $font_size."px !important"; ?>;}  <?php
+        }
+//        end typography
         $container = $general[0]['satina_width_container_option'];
         $maincolor = $general[0]['satina_color_main_option'];
         if (isset($container)){
@@ -161,7 +179,7 @@
 <body>
 <!-- top menu -->
 <?php
-$topmenu = satina_get_option('satina_topmenu_options');
+
 $topmenu_active = $topmenu[0]['satina_topmenu_active_option'];
 $topmenu_background = $topmenu[0]['satina_color_topmenu_option'];
 $topmenu_tell = $topmenu[0]['satina_tel_topmenu_option'];
@@ -202,7 +220,7 @@ if ($topmenu_active == 'enable'){
 }
 ?>
 <?php
-$group_header = satina_get_option('satina_header_options');
+
 $select_header = $group_header[0]['satina_header_select_option'];
 $header_button = $group_header[0]['satina_header_button_option'];
 $btn_text = $group_header[0]['satina_text_button_header_option'] ;
