@@ -58,6 +58,7 @@ require_once 'inc/video-product.php';
 require_once 'inc/teacher-product.php';
 require_once 'inc/lesson.php';
 require_once 'inc/remove-field-checkout.php';
+require_once 'theme-options/settings.php';
 
 //add رایگان
 function satina_price_zero( $price, $product ){
