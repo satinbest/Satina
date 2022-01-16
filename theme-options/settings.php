@@ -141,6 +141,54 @@ function satina_register_theme_options_metabox() {
             'data-conditional-value'  => 'enable',
         )
     ) );
+    //start header option
+    $header = $all_options->add_field( array(
+        'id'          => 'satina_header_options',
+        'type'        => 'group',
+        'repeatable'  => false, // use false if you want non-repeatable group
+        'options'     => array(
+            'group_title'       => __( 'تنظیمات هدر', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+            'sortable'          => true,
+            'closed'         => true, // true to have the groups closed by default
+        ),
+    ) );
+    $all_options->add_group_field(  $header, array(
+        'name' => 'انتخاب سربرگ',
+        'id'   => 'satina_header_select_option',
+        'type'             => 'select',
+        'show_option_none' => false,
+        'default'          => 'header_one',
+        'options'          => array(
+            'header_one' => __( 'سربرگ یک', 'cmb2' ),
+            'header_two'   => __( 'سربرگ دو', 'cmb2' ),
+        ),
+    ) );
+    $all_options->add_group_field(  $header, array(
+        'name' => 'نمایش/مخفی دکه سربرگ',
+        'id'   => 'satina_header_button_option',
+        'type'    => 'radio_inline',
+        'options' => array(
+            'enable' => __( 'نمایش', 'cmb2' ),
+            'disable'   => __( 'مخفی', 'cmb2' ),
+        ),
+        'default' => 'enable',
+    ) );
+    $all_options->add_group_field(  $header, array(
+        'name' => 'متن دکمه سربرگ',
+        'id'   => 'satina_text_button_header_option',
+        'type' => 'text',
+        'attributes' => array(
+            'placeholder' => 'پیش فرض به صورت: ورود/ثبت نام می باشد ',
+        )
+    ) );
+    $all_options->add_group_field(  $header, array(
+        'name' => 'لینک دکمه سربرگ',
+        'id'   => 'satina_link_button_header_option',
+        'type' => 'text',
+        'attributes' => array(
+            'placeholder' => 'به طور مثال :https://example.com/page',
+        )
+    ) );
 }
 
 
