@@ -18,15 +18,6 @@ function satina_register_theme_options_metabox() {
         // 'display_cb'      => false, // Override the options-page form output (CMB2_Hookup::options_page_output()).
         // 'save_button'     => esc_html__( 'Save Theme Options', 'satina' ), // The text for the options-page save button. Defaults to 'Save'.
     ) );
-
-    $all_options->add_field( array(
-        'name' => __( 'Test Text', 'satina' ),
-        'desc' => __( 'field description (optional)', 'satina' ),
-        'id'   => 'test_text',
-        'type' => 'text',
-        'default' => 'Default Text',
-    ) );
-
     $general = $all_options->add_field( array(
         'id'          => 'satina_general_options',
         'type'        => 'group',
@@ -66,7 +57,6 @@ function satina_register_theme_options_metabox() {
             ))
         )
     ) );
-
 }
 
 function satina_get_option( $key = '', $default = false ) {
