@@ -12,6 +12,13 @@ function add_theme_scripts() {
     wp_enqueue_script('main',get_template_directory_uri().'/assets/js/main.js',array('jquery'),false,true);
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
+
+//add cmb2 js file
+function add_admin_scrtips(){
+    wp_enqueue_script('conditional',get_template_directory_uri().'/assets/js/cmb2-conditional-logic.min.js',array('jquery'),false,true);
+}
+add_action( 'admin_enqueue_scripts','add_admin_scrtips' );
+
 //add theme support title & feeds & menu
 function satina_setup_theme(){
     //add theme support title
@@ -58,6 +65,7 @@ require_once 'inc/video-product.php';
 require_once 'inc/teacher-product.php';
 require_once 'inc/lesson.php';
 require_once 'inc/remove-field-checkout.php';
+require_once 'theme-options/settings.php';
 
 //add رایگان
 function satina_price_zero( $price, $product ){
