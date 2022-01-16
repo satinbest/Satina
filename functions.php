@@ -12,6 +12,13 @@ function add_theme_scripts() {
     wp_enqueue_script('main',get_template_directory_uri().'/assets/js/main.js',array('jquery'),false,true);
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
+
+//add cmb2 js file
+function add_admin_scrtips(){
+    wp_enqueue_script('conditional',get_template_directory_uri().'/assets/js/cmb2-conditional-logic.min.js',array('jquery'),false,true);
+}
+add_action( 'admin_enqueue_scripts','add_admin_scrtips' );
+
 //add theme support title & feeds & menu
 function satina_setup_theme(){
     //add theme support title

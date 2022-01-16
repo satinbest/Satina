@@ -18,6 +18,7 @@ function satina_register_theme_options_metabox() {
         // 'display_cb'      => false, // Override the options-page form output (CMB2_Hookup::options_page_output()).
         // 'save_button'     => esc_html__( 'Save Theme Options', 'satina' ), // The text for the options-page save button. Defaults to 'Save'.
     ) );
+    //start general option
     $general = $all_options->add_field( array(
         'id'          => 'satina_general_options',
         'type'        => 'group',
@@ -57,7 +58,94 @@ function satina_register_theme_options_metabox() {
             ))
         )
     ) );
+
+    //start top menu option
+    $topmenu = $all_options->add_field( array(
+        'id'          => 'satina_topmenu_options',
+        'type'        => 'group',
+        'repeatable'  => false, // use false if you want non-repeatable group
+        'options'     => array(
+            'group_title'       => __( 'تنظیمات منوی بالا', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+            'sortable'          => true,
+            'closed'         => true, // true to have the groups closed by default
+        ),
+    ) );
+    $all_options->add_group_field( $topmenu, array(
+        'name' => 'منوی بالا',
+        'id'   => 'satina_topmenu_active_option',
+        'type'    => 'radio_inline',
+        'options' => array(
+            'enable' => __( 'فعال', 'cmb2' ),
+            'disable'   => __( 'غیر فعال', 'cmb2' ),
+        ),
+        'default' => 'enable',
+    ) );
+    $all_options->add_group_field( $topmenu, array(
+        'name' => 'رنگ زمینه منوی بالا',
+        'id'   => 'satina_color_topmenu_option',
+        'type'    => 'colorpicker',
+        'default' => '#34495e',
+        'attributes' => array(
+            'data-colorpicker' => json_encode(array(
+                'palettes' => array('#34495e','#ff834c','#4fa2c0','#0bc991')
+            )),
+            'data-conditional-id'     => 'satina_topmenu_active_option',
+            'data-conditional-value'  => 'enable',
+        )
+    ) );
+    $all_options->add_group_field(  $topmenu, array(
+        'name' => 'شماره تلفن',
+        'id'   => 'satina_tel_topmenu_option',
+        'type' => 'text',
+        'attributes' => array(
+            'placeholder' => 'مشاوره و پشتیبانی واتس اپ: 09xxxxxxxxx ',
+            'data-conditional-id'     => 'satina_topmenu_active_option',
+            'data-conditional-value'  => 'enable',
+        )
+    ) );
+    $all_options->add_group_field(  $topmenu, array(
+        'name' => 'آدرس ایمیل',
+        'id'   => 'satina_email_topmenu_option',
+        'type' => 'text',
+        'attributes' => array(
+            'placeholder' => 'آدرس ایمیل: 2ksky92@gmail.com ',
+            'data-conditional-id'     => 'satina_topmenu_active_option',
+            'data-conditional-value'  => 'enable',
+        )
+    ) );
+    $all_options->add_group_field(  $topmenu, array(
+        'name' => 'نمایش/مخفی جستجو',
+        'id'   => 'satina_search_topmenu_option',
+        'type'    => 'radio_inline',
+        'options' => array(
+            'enable' => __( 'فعال', 'cmb2' ),
+            'disable'   => __( 'غیر فعال', 'cmb2' ),
+        ),
+        'default' => 'enable',
+        'attributes' => array(
+            'data-conditional-id'     => 'satina_topmenu_active_option',
+            'data-conditional-value'  => 'enable',
+        )
+    ) );
+    $all_options->add_group_field(  $topmenu, array(
+        'name' => 'نمایش/مخفی سبدخرید',
+        'id'   => 'satina_cart_topmenu_option',
+        'type'    => 'radio_inline',
+        'options' => array(
+            'enable' => __( 'فعال', 'cmb2' ),
+            'disable'   => __( 'غیر فعال', 'cmb2' ),
+        ),
+        'default' => 'enable',
+        'attributes' => array(
+            'data-conditional-id'     => 'satina_topmenu_active_option',
+            'data-conditional-value'  => 'enable',
+        )
+    ) );
+
 }
+
+
+
 
 function satina_get_option( $key = '', $default = false ) {
     if ( function_exists( 'cmb2_get_option' ) ) {
