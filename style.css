@@ -48,6 +48,9 @@ a {
 .relative{
     position: relative;
 }
+nopadding-btn{
+    padding: 4px !important;
+}
 .container {
     width: 1366px;
     margin: auto;
@@ -174,6 +177,67 @@ a {
     background: #5caf21;
     color: #fff;
 }
+/**************شروع منوی اصلی ورژن2***************/
+.menu-wrapper {
+    float: right;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0px 3px 3px #f8f8f8;
+}
+.main-menu2 {
+    display: flex;
+    justify-content: space-between;
+}
+.main-menu2 > ul > li {
+    float: right;
+    list-style: none;
+    position: relative;
+}
+.main-menu2 ul li a {
+    padding: 13px 22px;
+    display: inline-block;
+    font-size: 15px;
+    text-decoration: none;
+    color: #454647;
+    font-weight: bold;
+}
+.main-menu2 ul li a i {
+    margin-right: 5px;
+}
+.main-menu2 ul li ul {
+    position: absolute;
+    width: 250px;
+    background: #fff;
+    top: 100px;
+    right: 0;
+    box-shadow: 0px 1px 6px #e6e6e6;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s ease-in-out;
+    z-index: 999;
+}
+.main-menu2 ul li ul li {
+    list-style: none;
+}
+.main-menu2 ul li ul li a {
+    padding: 9px 15px;
+    display: block;
+    font-weight: normal;
+
+}
+.main-menu2 ul li ul li a:hover {
+    background: #5caf21;
+    color: #fff;
+}
+.main-menu2 > ul > li:hover ul {
+    opacity: 1;
+    visibility: visible;
+    top: 57px;
+}
+.main-menu2 .sign{
+    padding: 4px 0 !important;
+}
+/***************پایان منوی اصلی ورژن 2************/
 
 /* style button */
 .sign {
@@ -1355,6 +1419,38 @@ footer .copy-right {
 .search-icon {
     cursor: pointer;
 }
+
+/**********شروع فرم جستجو هدر 2**********/
+.searchbox2 {
+    float: right;
+    width: 54%;
+    margin-right: 25px;
+    margin-top: 20px;
+    position: relative;
+}
+.searchbox2 input[type="text"] {
+    width: 100%;
+    font-size: 16px;
+    font-family: 'iransans';
+    padding: 8px 15px;
+    background: #f8f8f8;
+    border: 1px solid #f4f4f4;
+    border-radius: 5px;
+}
+.searchbox2 button {
+    position: absolute;
+    left: 13px;
+    top: 9px;
+    font-size: 22px;
+    color: #c8c7c7;
+    cursor: pointer;
+    background: #f8f8f8;
+}
+.search-icon {
+    cursor: pointer;
+}
+/**********پایان فرم جستجو هدر 2*********/
+
 /*start style woocommerce*/
 .main-pro{
     width: 73%;

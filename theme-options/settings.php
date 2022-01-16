@@ -179,6 +179,8 @@ function satina_register_theme_options_metabox() {
         'type' => 'text',
         'attributes' => array(
             'placeholder' => 'پیش فرض به صورت: ورود/ثبت نام می باشد ',
+            'data-conditional-id'     => 'satina_header_button_option',
+            'data-conditional-value'  => 'enable',
         )
     ) );
     $all_options->add_group_field(  $header, array(
@@ -187,6 +189,8 @@ function satina_register_theme_options_metabox() {
         'type' => 'text',
         'attributes' => array(
             'placeholder' => 'به طور مثال :https://example.com/page',
+            'data-conditional-id'     => 'satina_header_button_option',
+            'data-conditional-value'  => 'enable',
         )
     ) );
 }
