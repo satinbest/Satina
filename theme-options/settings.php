@@ -249,6 +249,27 @@ function satina_register_theme_options_metabox() {
             )),
         )
     ) );
+    $blog = $all_options->add_field( array(
+        'id'          => 'satina_blog_options',
+        'type'        => 'group',
+        'repeatable'  => false, // use false if you want non-repeatable group
+        'options'     => array(
+            'group_title'       => __( 'تنظیمات بلاگ', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+            'sortable'          => true,
+            'closed'         => true, // true to have the groups closed by default
+        ),
+    ) );
+    $all_options->add_group_field($blog, array(
+        'name' => 'موقعیت سایدبار',
+        'id'   => 'satina_sidebar_option',
+        'type'    => 'image_select',
+        'default'          => 'side-left',
+        'options'          => array(
+            'side-left' => array('title' => 'سایدبار چپ', 'img' => get_template_directory_uri().'/img/left-side.png',),
+            'side-right' => array('title' => 'سایدبار راست', 'img' => get_template_directory_uri().'/img/right-side.png',),
+            'full-width' => array('title' => 'بدون سایدبار', 'img' => get_template_directory_uri().'/img/full-width.png',),
+        ),
+    ) );
 }
 
 

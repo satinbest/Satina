@@ -95,8 +95,25 @@
                 </div>
 
             </div>
-
-            <?php get_sidebar(); ?>
+            <?php
+            $blog = satina_get_option('satina_blog_options');
+            $side_blog = $blog[0]['satina_sidebar_option'];
+            if ($side_blog != 'full-width'){
+                get_sidebar();
+                if ($side_blog != 'side-left'){ ?>
+                    <style>
+                        .sidebar {float : right !important;}
+                        .main-single {float: left !important;}
+                    </style>
+                    <?php
+                }
+            }else{ ?>
+                <style>
+                    .main-single {width: 100% !important;}
+                </style>
+                <?php
+            }
+            ?>
         </div>
     </div>
 
