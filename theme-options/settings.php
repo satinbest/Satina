@@ -270,6 +270,13 @@ function satina_register_theme_options_metabox() {
             'full-width' => array('title' => 'بدون سایدبار', 'img' => get_template_directory_uri().'/img/full-width.png',),
         ),
     ) );
+    $all_options->add_group_field($blog, array(
+        'name' => 'نمایش/مخفی مطالب مرتبط',
+        'id'   => 'satina_relate_post_option',
+        'type'	           => 'switch',
+        'active_value'     => true,
+        'inactive_value'   => false
+    ) );
 }
 
 

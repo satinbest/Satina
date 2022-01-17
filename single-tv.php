@@ -55,7 +55,11 @@
                     endwhile;
                 endif;
                 ?>
-                <section class="related-post">
+                <?php
+                $blog = satina_get_option('satina_blog_options');
+                $related_post = $blog[0]['satina_relate_post_option'];
+                if ($related_post){ ?>
+                    <section class="related-post">
                     <div class="related-head">
                         <h4>مطالب زیر را حتما مطالعه نمایید</h4>
                     </div>
@@ -83,6 +87,10 @@
                         </div>
                     </div>
                 </section>
+                <?php
+                }
+                ?>
+
                 <div class="comment-box">
                     <div class="related-head">
                         <h4>نظرات : </h4>

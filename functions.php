@@ -69,6 +69,7 @@ require_once 'inc/lesson.php';
 require_once 'inc/remove-field-checkout.php';
 require_once 'theme-options/settings.php';
 require_once 'theme-options/image-select.php';
+require_once 'theme-options/cmb2-switch-button.php';
 
 //add رایگان
 function satina_price_zero( $price, $product ){
