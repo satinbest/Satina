@@ -24,7 +24,16 @@
 
     <div class="copy-right">
         <div class="container">
+            <?php
+            $footer_tools = satina_get_option('satina_footer_options');
+            $text_copyright = $footer_tools[0]['satina_message_copyright_option'];
+            if (isset($text_copyright)){
+                echo "<p>$text_copyright</p>";
+            }else{ ?>
             <p> حقوق تمامی محتواهای موجود در این وب سایت محفوظ می باشد. </p>
+            <?php
+            }
+            ?>
             <div class="social">
                 <a href="#"><i class="fab fa-facebook"></i> </a>
                 <a href="#"><i class="fab fa-twitter"></i> </a>

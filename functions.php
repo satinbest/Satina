@@ -15,7 +15,9 @@ add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
 //add cmb2 js file
 function add_admin_scrtips(){
+    wp_enqueue_style('image.metafield', get_template_directory_uri().'/assets/css/image_select_metafield.css',array(),false, 'all');
     wp_enqueue_script('conditional',get_template_directory_uri().'/assets/js/cmb2-conditional-logic.min.js',array('jquery'),false,true);
+    wp_enqueue_script('img.select',get_template_directory_uri().'/assets/js/img-select.js',array('jquery'),false,true);
 }
 add_action( 'admin_enqueue_scripts','add_admin_scrtips' );
 
@@ -66,6 +68,8 @@ require_once 'inc/teacher-product.php';
 require_once 'inc/lesson.php';
 require_once 'inc/remove-field-checkout.php';
 require_once 'theme-options/settings.php';
+require_once 'theme-options/image-select.php';
+require_once 'theme-options/cmb2-switch-button.php';
 
 //add رایگان
 function satina_price_zero( $price, $product ){

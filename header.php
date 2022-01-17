@@ -10,6 +10,7 @@
     $topmenu = satina_get_option('satina_topmenu_options');
     $group_header = satina_get_option('satina_header_options');
     $typography = satina_get_option('satina_typography_options');
+    $footer_tools = satina_get_option('satina_footer_options');
     ?>
     <link rel="icon" type="image/png" href="<?php echo $general[0]['satina_five_icon_option']; ?>">
     <style>
@@ -29,6 +30,25 @@
             body {font-size: <?php echo $font_size."px !important"; ?>;}  <?php
         }
 //        end typography
+//           start footet styles
+        $footer_bg = $footer_tools[0]['satina_footer_background_option']; ?>
+        footer{background: <?php echo $footer_bg; ?>}
+        <?php
+
+        $footer_color = $footer_tools[0]['satina_footer_text_color_option']; ?>
+        footer,.aboute p{color: <?php echo $footer_color; ?>}
+        <?php
+
+        $copyright_background = $footer_tools[0]['satina_footer_copyright_background_option']; ?>
+        footer .copy-right{background: <?php echo $copyright_background; ?>}
+        <?php
+
+        $copyright_color = $footer_tools[0]['satina_footer_copyright_text_color_option']; ?>
+        footer .copy-right{color: <?php echo $copyright_color; ?>}
+        <?php
+
+
+
         $container = $general[0]['satina_width_container_option'];
         $maincolor = $general[0]['satina_color_main_option'];
         if (isset($container)){

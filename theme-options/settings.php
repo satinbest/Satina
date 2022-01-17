@@ -249,6 +249,97 @@ function satina_register_theme_options_metabox() {
             )),
         )
     ) );
+    $blog = $all_options->add_field( array(
+        'id'          => 'satina_blog_options',
+        'type'        => 'group',
+        'repeatable'  => false, // use false if you want non-repeatable group
+        'options'     => array(
+            'group_title'       => __( 'تنظیمات بلاگ', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+            'sortable'          => true,
+            'closed'         => true, // true to have the groups closed by default
+        ),
+    ) );
+    $all_options->add_group_field($blog, array(
+        'name' => 'موقعیت سایدبار',
+        'id'   => 'satina_sidebar_option',
+        'type'    => 'image_select',
+        'default'          => 'side-left',
+        'options'          => array(
+            'side-left' => array('title' => 'سایدبار چپ', 'img' => get_template_directory_uri().'/img/left-side.png',),
+            'side-right' => array('title' => 'سایدبار راست', 'img' => get_template_directory_uri().'/img/right-side.png',),
+            'full-width' => array('title' => 'بدون سایدبار', 'img' => get_template_directory_uri().'/img/full-width.png',),
+        ),
+    ) );
+    $all_options->add_group_field($blog, array(
+        'name' => 'نمایش/مخفی مطالب مرتبط',
+        'id'   => 'satina_relate_post_option',
+        'type'	           => 'switch',
+        'active_value'     => true,
+        'inactive_value'   => false
+    ) );
+    $footer_tools = $all_options->add_field( array(
+        'id'          => 'satina_footer_options',
+        'type'        => 'group',
+        'repeatable'  => false, // use false if you want non-repeatable group
+        'options'     => array(
+            'group_title'       => __( 'تنظیمات فوتر', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+            'sortable'          => true,
+            'closed'         => true, // true to have the groups closed by default
+        ),
+    ) );
+    $all_options->add_group_field($footer_tools, array(
+        'name' => 'رنگ زمینه فوتر',
+        'id'   => 'satina_footer_background_option',
+        'type'    => 'colorpicker',
+        'default' => '#F5F6FA',
+        'attributes' => array(
+            'data-colorpicker' => json_encode(array(
+                'palettes' => array('#F5F6FA','#ff834c','#4fa2c0','#0bc991')
+            )),
+        )
+    ) );
+    $all_options->add_group_field($footer_tools, array(
+        'name' => 'رنگ متن فوتر',
+        'id'   => 'satina_footer_text_color_option',
+        'type'    => 'colorpicker',
+        'default' => '#4a4a4a',
+        'attributes' => array(
+            'data-colorpicker' => json_encode(array(
+                'palettes' => array('#4a4a4a','#ff834c','#4fa2c0','#0bc991')
+            )),
+        )
+    ) );
+    $all_options->add_group_field($footer_tools, array(
+        'name' => 'رنگ زمینه کپی رایت',
+        'id'   => 'satina_footer_copyright_background_option',
+        'type'    => 'colorpicker',
+        'default' => '#163a5c',
+        'attributes' => array(
+            'data-colorpicker' => json_encode(array(
+                'palettes' => array('#163a5c','#ff834c','#4fa2c0','#0bc991')
+            )),
+        )
+    ) );
+    $all_options->add_group_field($footer_tools, array(
+        'name' => 'رنگ متن کپی رایت',
+        'id'   => 'satina_footer_copyright_text_color_option',
+        'type'    => 'colorpicker',
+        'default' => '#e8e8e8',
+        'attributes' => array(
+            'data-colorpicker' => json_encode(array(
+                'palettes' => array('#e8e8e8','#ff834c','#4fa2c0','#0bc991')
+            )),
+        )
+    ) );
+    $all_options->add_group_field($footer_tools, array(
+        'name' => 'متن کپی رایت',
+        'id'   => 'satina_message_copyright_option',
+        'type' => 'text',
+        'description' => 'به طور مثال :حقوق تمامی محتواهای موجود در این وب سایت محفوظ می باشد.',
+        'attributes' => array(
+            'placeholder' => ' متن کپی رایت مدنظر خود را وارد نمایید',
+        )
+    ) );
 }
 
 
